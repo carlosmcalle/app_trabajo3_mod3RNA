@@ -1,0 +1,6 @@
+streamlit
+torch
+numpy
+pandas
+joblib
+scikit-learn==1.6.1

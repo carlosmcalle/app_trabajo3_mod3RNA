@@ -48,13 +48,14 @@ num_recs = st.selectbox("¿Cuántas recomendaciones mostrar?", [3, 5, 10], index
 if selected_user:
     user_profile = df_users[df_users["UserID"] == selected_user].iloc[0]
     st.subheader("👤 Perfil del Usuario")
-    st.write({
-        "Género": user_profile.get("Gender", "N/A"),
-        "Preferencia 1": user_profile.get("Preference_1", "N/A"),
-        "Preferencia 2": user_profile.get("Preference_2", "N/A"),
-        "Adultos": user_profile.get("NumberOfAdults", "N/A"),
-        "Niños": user_profile.get("NumberOfChildren", "N/A"),
-    })
+    st.markdown(f"""
+    **Género:** {user_profile.get("Gender", "N/A")}  
+    **Preferencia principal:** {user_profile.get("Preference_1", "N/A")}  
+    **Preferencia secundaria:** {user_profile.get("Preference_2", "N/A")}  
+    **Adultos:** {user_profile.get("NumberOfAdults", "N/A")}  
+    **Niños:** {user_profile.get("NumberOfChildren", "N/A")}
+    """)
+
 
     st.subheader("🗂️ Historial de Interacciones Positivas (Rating ≥ 4)")
     pos_hist = df_interactions[

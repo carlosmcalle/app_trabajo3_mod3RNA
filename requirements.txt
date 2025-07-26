@@ -4,4 +4,4 @@ numpy
 pandas
 joblib
 scikit-learn==1.6.1
-lightfm
+git+https://github.com/lyst/lightfm.git

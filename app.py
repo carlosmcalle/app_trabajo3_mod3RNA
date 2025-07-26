@@ -7,7 +7,7 @@ from pathlib import Path
 # --- CARGA DE MODELO Y DATOS ---
 @st.cache_resource
 def load_recommender_artifacts():
-    model_path = Path(__file__).parents[1] / "models" / "model_module_3.pkl"
+    model_path = "model_module_3.pkl"
     if not model_path.exists():
         st.error("❌ No se encontró el archivo del modelo en la carpeta `models/`.")
         return None

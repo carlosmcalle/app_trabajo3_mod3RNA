@@ -2,13 +2,13 @@ import streamlit as st
 import joblib
 import pandas as pd
 import numpy as np
-import lightfm
+from lightfm import LightFM
 from pathlib import Path
 
 # --- CARGA DE MODELO Y DATOS ---
 @st.cache_resource
 def load_recommender_artifacts():
-    model_path = "model_module_3.pkl"
+    model_path = Path("model_module_3.pkl")
     if not model_path.exists():
         st.error("❌ No se encontró el archivo del modelo en la carpeta `models/`.")
         return None
